@@ -10,7 +10,7 @@ function useTodosLoading() {
     }, [fetchTodos])
 }
 
-const App:React.FC = () => {
+const App = () => {
   const  { todos, doneTodos, loading, fetching, addTodo, isFetching } = useContext(TodosContext);
   const [listType, setListType] = useState<boolean>(true);
   const [newTodo, setNewTodo] = useState<string>("");

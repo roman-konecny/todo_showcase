@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { TodosContext, Todo } from '../store/todos-context';
+import { TodosContext } from '../store/todos-context';
 import TodoItem from '../components/Todo'
 
-const TodoDetail:React.FC = () => {
+const TodoDetail = () => {
     const { slug } = useParams();
     const { todos, doneTodos } = useContext(TodosContext);
     let todoDetail = todos.find(elem => elem.id === slug)
