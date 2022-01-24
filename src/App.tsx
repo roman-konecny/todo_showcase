@@ -1,8 +1,6 @@
 import { useEffect, useContext, useState } from "react";
 import TodoItem from './Todo';
 import { TodosContext, Todo } from "./store/todos-context";
-import { timeStamp } from "console";
-
 
 function useTodosLoading() {
   const { fetchTodos } = useContext(TodosContext);

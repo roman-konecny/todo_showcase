@@ -11,7 +11,6 @@ const TodoItem = (props: TodoProps)  => {
 	const { id, completed, title } = props.todo
 	const todoDetail = props.detail
 	const  { markTodo, changeTodo, removeTodo } = useContext(TodosContext)
-	const [checked, setChecked] = useState<boolean>(false)
 	const [newTitle, setNewTitle] = useState<string>(title)
 
 	function handleChange(e: React.FormEvent<HTMLFormElement>, todo: Todo) {
@@ -22,7 +21,7 @@ const TodoItem = (props: TodoProps)  => {
 	return (
 			<div className={ todoDetail ? "todoItem todoDetail" : "todoItem"}>
 				<div className={ todoDetail ? "container todoDetail" : "container"}>
-					<button className={completed ? "revive-button" : ""} onClick={() => {markTodo(completed, props.todo); setChecked(completed);}}></button>	
+					<button className={completed ? "revive-button" : ""} onClick={() => {markTodo(completed, props.todo);}}></button>	
 					<h2 className={"title ".concat(`${completed}`)}>{title}</h2>
 				</div>
 				<div>
