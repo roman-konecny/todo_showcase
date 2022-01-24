@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import TodosContext from './store/todos-context';
-import Todo from './Todo'
+import { TodosContext, Todo } from '../store/todos-context';
+import TodoItem from '../components/Todo'
 
 const TodoDetail:React.FC = () => {
     const { slug } = useParams();
@@ -11,16 +11,16 @@ const TodoDetail:React.FC = () => {
 
 
   return (
-      <div>
+      <div className="todoWrapper">
           {todoDetail === undefined 
           ?
             doneTodoDetail === undefined
             ?
             <div><h1>Something went wrong...</h1><Link  to={"/"}>Home!</Link></div>
             :
-            <Todo todo={doneTodoDetail} detail={true}/>
+            <TodoItem todo={doneTodoDetail} detail={true}/>
           :
-          <Todo todo={todoDetail} detail={true}/>
+          <TodoItem todo={todoDetail} detail={true}/>
         }
       </div>
   )

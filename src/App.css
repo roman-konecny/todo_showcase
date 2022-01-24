@@ -125,16 +125,38 @@ button.first-tab {
 }
 
 .todoItem.todoDetail {
-  margin: 10% auto;
-  width: 70%;
+  width: 50%;
+  display: block;
+}
+
+.todoDetail > div {
+  margin-bottom: 30px;
+}
+
+div.todoDetail > form {
+  margin: 0 20px;
+}
+
+
+.todoWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
 div.todoDetail {
   color: #ffffff;
 }
 
+.change-todo > div {
+  display: flex;
+  align-items: center;
+}
+
 form.change-todo {
   min-width: 50%;
+  justify-content: space-between !important;
 }
 
 form.change-todo > input[type="text"] {
@@ -195,23 +217,25 @@ button.revive-button:hover {
 }
 
 .container > button {
-  margin-left: 20px;
-  min-width: 20px;
-  height: 20px;
+  margin-left: 25px;
+  min-width: 25px;
+  height: 25px;
   border-radius: 50%;
   background-color: #1DA1F2;
   border:0;
-  transition: 300ms ease-in;
+  transition: 200ms ease-in;
   cursor: pointer;
   box-shadow:  1px 2px 4px #000000;
 }
 
 .container > button:hover {
   background-color: #202020;
+  border: 2px solid #1DA1F2;
 }
 
 .todoItem a {
   font-size: 20px;
+  height: 30px;
   margin: 0 5px;
   text-decoration: none;
   transition: 300ms ease-in;
@@ -254,19 +278,21 @@ form.add-todo {
   padding-left: 15px;
 }
 
-.add-todo > button {
+.add-todo button {
   all: unset;
-  width: 5%;
-  height: 70%;
+  cursor: pointer;
+  width: 25px;
+  height: 25px;
   align-self: center;
   background-color: #1DA1F2;
   border-radius: 5px;
-  transition: 300ms ease-in;
+  transition: 100ms ease-in;
   box-shadow:  1px 2px 4px #404040;
-  clip-path: polygon(0% 20%, 60% 20%, 60% 0%, 100% 50%, 60% 100%, 60% 80%, 0% 80%);
+  clip-path: polygon(0 35%, 35% 35%, 35% 0%, 65% 0%, 65% 35%, 100% 35%, 100% 65%, 65% 65%, 65% 100%, 35% 100%, 35% 65%, 0 65%); 
+  margin: 0 5px;
 }
 
-.add-todo > button:hover {
+.add-todo button:hover {
   background-color: #1df288;
 }
 

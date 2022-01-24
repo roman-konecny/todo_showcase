@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { Todo, TodosContext } from './store/todos-context';
+import { Todo, TodosContext } from '../store/todos-context';
 import { useContext, useState } from 'react'
 
 interface TodoProps {
@@ -24,14 +24,15 @@ const TodoItem = (props: TodoProps)  => {
 					<button className={completed ? "revive-button" : ""} onClick={() => {markTodo(completed, props.todo);}}></button>	
 					<h2 className={"title ".concat(`${completed}`)}>{title}</h2>
 				</div>
-				<div>
-					{ todoDetail ? <Link to="/" onClick={() => removeTodo(props.todo)}>🗑️</Link> : <></> }
-					<Link to={ todoDetail ? "/" : "/".concat(id)}>{ todoDetail ? "🏠" : "📝"}</Link>
-				</div>
+				{ todoDetail ? <></> : <Link to={"/".concat(id)}>📝</Link> }
 				{ todoDetail ? 
 				<form className="add-todo change-todo" onSubmit={(e) => handleChange(e, props.todo)}>
 					<input type="text" onChange={event => {setNewTitle(event.target.value)}} value={newTitle}/>
-					<button type="submit"/>
+					<div>
+						<button type="submit"/>
+						<Link to="/">🏠</Link>
+						<Link to="/" onClick={() => removeTodo(props.todo)}>🗑️</Link>
+					</div>
 				</form>
 				: <></> }
 			</div>

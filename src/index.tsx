@@ -1,7 +1,7 @@
 import { StrictMode } from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
-import TodoDetail from './TodoDetail';
+import App from './pages/App';
+import TodoDetail from './pages/TodoDetail';
 import { TodosContextProvider } from './store/todos-context'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import './App.css';

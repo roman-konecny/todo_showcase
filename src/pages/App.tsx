@@ -1,6 +1,6 @@
 import { useEffect, useContext, useState } from "react";
-import TodoItem from './Todo';
-import { TodosContext, Todo } from "./store/todos-context";
+import TodoItem from '../components/Todo';
+import { TodosContext, Todo } from "../store/todos-context";
 
 function useTodosLoading() {
   const { fetchTodos } = useContext(TodosContext);
